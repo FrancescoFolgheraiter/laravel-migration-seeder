@@ -12,10 +12,10 @@ $dateIta = $dateNow->format('Y-m-d');
 
 @section('main-content')
 <h1 class="text-center">
-    Treni in partenza oggi 
+    Treni
 </h1>
 <h2 class="text-center">
-    <a href="{{ route('train.showToday', ['date' => $dateIta])}}" class=" nav-underline ">
+    <a href="{{ route('train.show', ['date' => $dateIta])}}" class=" nav-underline ">
         {{ $dateIta }}
     </a>
 </h2>

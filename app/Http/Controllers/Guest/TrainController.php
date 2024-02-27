@@ -18,7 +18,7 @@ class TrainController extends Controller
     public function showDate($date)
     {
         $trains = Train::whereDate('departure_time','LIKE', $date)->get();
-        return view('train.showToday', compact('trains'));
+        return view('train.showToday', compact('trains','date'));
     }
 
 }
