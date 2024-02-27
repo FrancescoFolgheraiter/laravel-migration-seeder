@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('agency',64);
             $table->string('departure_station',96);
             $table->string('arrival_station',96);
-            $table->time('departure_time', $precision = 0)->nullable();
-            $table->time('arrival_time', $precision = 0)->nullable();
+            $table->dateTime('departure_time', $precision = 0)->nullable();
+            $table->dateTime('arrival_time', $precision = 0)->nullable();
             $table->smallInteger('train_code')->unique()->unsigned();
             $table->tinyInteger('number_carriages')->nullable()->unsigned();
             $table->boolean('timetable')->default(true);
