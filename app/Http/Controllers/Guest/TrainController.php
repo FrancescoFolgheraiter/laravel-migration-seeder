@@ -10,10 +10,15 @@ use App\Models\Train;
 
 class TrainController extends Controller
 {
+    public function index()
+    {
+        $trains = Train::all();
+        return view('welcome', compact('trains'));
+    }
     public function showDate($date)
     {
-        $trains = Train::where('departure_time','like', $date)->get();
-        return view('welcome', compact('trains'));
+        $trains = Train::whereDate('departure_time','LIKE', $date)->get();
+        return view('train.showToday', compact('trains'));
     }
 
 }

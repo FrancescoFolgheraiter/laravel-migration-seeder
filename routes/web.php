@@ -15,10 +15,8 @@ use App\Http\Controllers\Guest\TrainController;
 |
 */
 
-Route::get('/{date}',[TrainController::class,'showDate'])->name('train.index');
+Route::get('/',[TrainController::class,'index'])->name('train.index');
 
-Route::get('/chi-siamo', function () {
-    return view('subpages.about');
-});
+Route::get('/{date}',[TrainController::class,'showDate'])->name('train.show');
 
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)

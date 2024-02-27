@@ -7,7 +7,7 @@
 use Carbon\Carbon;
 //istanzio la variablie;
 $dateNow = Carbon::now();
-$dateIta = $dateNow->format('d-m-y');
+$dateIta = $dateNow->format('Y-m-d');
 @endphp
 
 @section('main-content')
@@ -15,13 +15,23 @@ $dateIta = $dateNow->format('d-m-y');
     Treni in partenza oggi 
 </h1>
 <h2 class="text-center">
-    {{ $dateIta }}
+    <a href="{{ route('train.showToday', ['date' => $dateIta])}}" class=" nav-underline ">
+        {{ $dateIta }}
+    </a>
 </h2>
 @foreach ($trains as $train)
-{{ $train['agency'] }}
+<div>
+         
+    {{ "Azienda: ".$train['agency'] }}
+    {{ $train['departure_station'] }}
+    {{ $train['arrival_station'] }}
+    {{ $train['departure_time'] }}
+    {{ $train['arrival_time'] }}
+    {{ $train['train_code'] }}
+    {{ $train['timetable'] }}
+    {{ $train['deleted'] }}
+
+</div>
 @endforeach
-@php
-    dd(fake()->dateTimeInInterval('-12 week', '+12 week'))
-@endphp
 
 @endsection

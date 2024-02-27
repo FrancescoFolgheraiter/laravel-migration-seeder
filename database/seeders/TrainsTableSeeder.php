@@ -29,7 +29,7 @@ class TrainsTableSeeder extends Seeder
             $Train->departure_time = $fakeDate." ".fake()->time();
             $Train->arrival_time= $fakeDate." ".fake()->time();
             $Train->train_code=fake()->randomNumber(4, false);
-            $Train->number_carriages=fake()->numberBetween(0, 25);
+            $Train->number_carriages=fake()->numberBetween(6, 25);
             $Train->timetable= fake()->boolean();
             $Train->deleted= fake()->boolean();
 
